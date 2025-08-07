@@ -19,12 +19,19 @@ pipeline {
                 }
             }
         }
+        stage('Run Python Script') {
+            steps {
+                echo 'Running Python script...'
+                // Use python3 or python based on your environment
+                sh 'python3 script.py'
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                // Example deployment command, adjust as needed
                 sh 'scp target/myapp.jar user@server:/opt/apps/'
             }
         }
     }
 }
+
