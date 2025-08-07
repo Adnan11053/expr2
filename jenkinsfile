@@ -8,12 +8,6 @@ pipeline {
                 sh 'python3 --version'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                sh 'python3 script.py'
-            }
-        }
         stage('Run Python Script') {
             steps {
                 echo 'Running Python script...'
