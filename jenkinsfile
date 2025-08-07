@@ -13,11 +13,6 @@ pipeline {
                 echo 'Running tests...'
                 sh 'python3 script.py'
             }
-            post {
-                always {
-                    junit '**/target/surefire-reports/*.xml'
-                }
-            }
         }
         stage('Run Python Script') {
             steps {
